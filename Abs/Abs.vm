@@ -3,7 +3,33 @@
 
 // Put your code here.
 
+// Abs.vm
+// This program calculates the absolute value of x and stores it in y.
 
+// Declare static variables
+static int x
+static int y
 
+function Abs 0  // No local variables
+
+// Load the value of x (static 0)
+push static 0   // Push x onto the stack
+
+// Check if x is negative
+push constant 0 // Push 0 onto the stack for comparison
+gt              // Compare x > 0, if true result is -1 (false = 0)
+
+// If x >= 0, skip to the end
+if-goto END     // If x is greater than or equal to 0, jump to END
+
+// Otherwise, calculate -x
+push static 0   // Push x onto the stack again
+neg             // Negate the value of x
+pop static 1    // Store -x in y (static 1)
+
+// End of program
 label END
-goto END
+push static 0   // If x >= 0, push x onto the stack
+pop static 1    // Store the absolute value of x in y (static 1)
+
+return          // Return control back
