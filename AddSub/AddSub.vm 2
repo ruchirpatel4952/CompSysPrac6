@@ -1,0 +1,17 @@
+// AddSub.vm
+// This program adds and subtracts two local variables and stores the sum in a static variable x.
+
+function AddSub 2  // Declare the function with 2 local variables
+
+// Step 1: Calculate a + b and store it in static variable x
+push local 0       // Push 'a' (local 0) onto the stack
+push local 1       // Push 'b' (local 1) onto the stack
+add                // Add a and b
+pop static 0       // Store the result in static 0 (x)
+
+// Step 2: Calculate a - b and leave the result on the stack
+push local 0       // Push 'a' (local 0) onto the stack
+push local 1       // Push 'b' (local 1) onto the stack
+sub                // Subtract b from a
+
+// Program ends here, with a-b result on the stack and a+b in static variable
