@@ -15,6 +15,7 @@ push local 1       // Push 'b' (local 1) onto the stack
 sub                // Subtract b from a
 
 // Program ends here, with a-b result on the stack and a+b in static variable
+return             // Explicit return to conclude the function
 
 label END
-goto END
+goto END           // Infinite loop to ensure program doesn’t halt prematurely
